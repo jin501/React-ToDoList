@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Button from './Button'
+import CheckComplete from './CheckComplete'
 
 class ToDo extends Component {
   constructor(props){
@@ -16,27 +16,27 @@ class ToDo extends Component {
 
   handleComplete(ev){
     ev.preventDefault()
-    // debugger
+    
+    let id = "item-" + this.props.id
+    document.getElementById(id).className = "completed";
     this.props.markComplete(this.props.id)
 
-      // this.state.complete = true
-      // debugger
-      // this.setState({
-      //   complete: true,
-      // })
+  }
 
-      // console.log(this.state)
+  dynamicClass() {
+     return "item-" + this.props.id
   }
 
   render (){
 
     return(
-      <li>
-        <div>
-         {this.props.item}
-        </div>
-        <Button handleComplete={this.handleComplete.bind(this)}
-          complete={this.props.complete} />
+      <li className="ToDos">
+          <CheckComplete handleComplete={this.handleComplete.bind(this)}
+            complete={this.props.complete} />
+          <div id={this.dynamicClass()}>
+            {this.props.item}t
+          </div>
+
       </li>
     );
   }

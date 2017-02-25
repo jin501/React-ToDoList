@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ToDo from './ToDo'
 import Form from './Form'
 
+
 class ToDoList extends Component {
   constructor(){
     super();
@@ -85,9 +86,11 @@ class ToDoList extends Component {
           handleSubmit={this.handleSubmit.bind(this)}
           handleChange={this.handleChange.bind(this)}
         />
-        <ul>
-          {toDo}
-        </ul>
+        <div className='ToDos'>
+          <ul>
+            {toDo}
+          </ul>
+        </div>
       </div>
     );
   }
