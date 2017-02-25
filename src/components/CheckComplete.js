@@ -1,10 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Button } from 'semantic-ui-react'
 
 const CheckComplete = (props) => {
 
-  {console.log('button has be rendered')}
-  // debugger
   return (
     <div className="Button">
       {props.complete ?

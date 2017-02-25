@@ -10,7 +10,7 @@ class Form extends Component {
         <h1>My To Do List</h1>
         <form onSubmit={this.props.handleSubmit}>
           <Input value={this.props.text} onChange={this.props.handleChange} type='text'></Input>
-          <Button inverted color='violet'>add</Button>
+          <Button color='violet'>add</Button>
         </form>
       </div>
     );

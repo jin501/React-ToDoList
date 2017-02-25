@@ -11,12 +11,11 @@ class ToDo extends Component {
       complete: this.props.complete,
     }
 
-    // this.handleComplete = this.handleComplete.bind(this)
   }
 
   handleComplete(ev){
     ev.preventDefault()
-    
+
     let id = "item-" + this.props.id
     document.getElementById(id).className = "completed";
     this.props.markComplete(this.props.id)
@@ -30,11 +29,11 @@ class ToDo extends Component {
   render (){
 
     return(
-      <li className="ToDos">
+      <li className="ToDo">
           <CheckComplete handleComplete={this.handleComplete.bind(this)}
             complete={this.props.complete} />
-          <div id={this.dynamicClass()}>
-            {this.props.item}t
+          <div className="toDoItem" id={this.dynamicClass()}>
+            {this.props.item}
           </div>
 
       </li>

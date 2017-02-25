@@ -18,7 +18,7 @@ class ToDoList extends Component {
 
   handleSubmit(ev){
     ev.preventDefault()
-    if(this.state.text == ''){
+    if(this.state.text === ''){
       return;
     }
 
@@ -44,19 +44,13 @@ class ToDoList extends Component {
   }
 
   markComplete(id){
-    var clickedItem
 
     var newArray = this.state.todos.map((item) => {
       if(item.id === id){
         item.isCompleted = true
-        // clickedItem = item
       }
       return item
     })
-    // debugger
-    /// something is wrong here - creating duplicate of item
-    /// that matched the id from above, rather than changing
-    /// it's state
 
     this.setState({
         // todos: [
